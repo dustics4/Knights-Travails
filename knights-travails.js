@@ -11,7 +11,15 @@ function knightMoves(start, target){
     }
 
     console.log(isValidPosition(0,0));    
-    console.log(isValidPosition(9,1));  
+    console.log(isValidPosition(9,1)); 
+    
+    let queue = [[start],[start]];
+    let current = start[0];
+    //variable path
+
+    while(queue.length > 0){
+
+    }
 }
 
 knightMoves([0,0],[7,7]);
