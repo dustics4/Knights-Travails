@@ -17,6 +17,8 @@ function knightMoves(start, target){
     let current = start[0];
     //variable path
 
+    console.log(queue);
+
     while(queue.length > 0){
 
     }
