@@ -14,12 +14,13 @@ function knightMoves(start, target){
     console.log(isValidPosition(9,1)); 
     
     let queue = [[start],[start]];
-    let current = start[0];
     //variable path
 
     console.log(queue);
 
     while(queue.length > 0){
+        let current = queue.shift(); // dequeue from front
+
 
     }
 }
