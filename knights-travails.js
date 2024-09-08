@@ -13,7 +13,7 @@ function knightMoves(start, target){
     console.log(isValidPosition(0,0));    
     console.log(isValidPosition(9,1)); 
     
-    let queue = [[start],[start]];
+    let queue = [[start,[start]]];
     let visitedPosition = {};
     visitedPosition[start] = true;
 
@@ -23,6 +23,12 @@ function knightMoves(start, target){
         let current = queue.shift(); // dequeue from front
         let currentPosition = current[0];
         let path = current[1];
+
+        console.log(path);
+
+        if(currentPosition[0] === target[0] && currentPosition[1] === target[1]){
+            console.log("You have made it in " + path.length - 1 + "moves");
+        }
 
     }
 }
