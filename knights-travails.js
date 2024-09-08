@@ -1,7 +1,7 @@
 function knightMoves(start, target){
     let directions = [ //lists all possible moves for the knight in chess
         [2,1], [1,2], [-1,2], [-2, 1],
-        [-2,-1] , [-1,-2], [1, -2], [2,1]
+        [-2,-1] , [-1,-2], [1, -2], [2, -1]
     ]
 
     console.log(directions);
@@ -17,17 +17,21 @@ function knightMoves(start, target){
     let visitedPosition = {};
     visitedPosition[start] = true;
 
-    console.log(queue);
+    console.log("Current queue :" , queue);;
 
     while(queue.length > 0){
         let current = queue.shift(); // dequeue from front
         let currentPosition = current[0];
         let path = current[1];
 
-        console.log(path);
-
-        if(currentPosition[0] === target[0] && currentPosition[1] === target[1]){
-            console.log("You have made it in " + path.length - 1 + "moves");
+        console.log("Current path : " , path);
+        
+        if (currentPosition[0] === target[0] && currentPosition[1] === target[1]) {
+            console.log("You have made it in " + (path.length - 1) + " moves. Here is your path:");
+            for (let i = 0; i < path.length; i++) { 
+                console.log(path[i]);
+            }
+            return path;
         }
 
     }
