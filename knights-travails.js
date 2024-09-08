@@ -20,7 +20,8 @@ function knightMoves(start, target){
 
     while(queue.length > 0){
         let current = queue.shift(); // dequeue from front
-
+        let currentPosition = current[0];
+        let path = current[1];
 
     }
 }
