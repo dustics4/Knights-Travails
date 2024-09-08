@@ -17,31 +17,27 @@ function knightMoves(start, target){
     let visitedPosition = {};
     visitedPosition[start] = true;
 
-    console.log("Current queue :" , queue);;
-
     while(queue.length > 0){
         let current = queue.shift(); // dequeue from front
-        let currentPosition = current[0];
-        let path = current[1];
+        let currentPosition = current[0]; //current position of knight
+        let path = current[1]; //The path taken to reach the current position
 
-        console.log("Current path : " , path);
-        
-        if (currentPosition[0] === target[0] && currentPosition[1] === target[1]) {
-            console.log("You have made it in " + (path.length - 1) + " moves. Here is your path:");
+        if (currentPosition[0] === target[0] && currentPosition[1] === target[1]) { //Checks if current position is the target position
+            console.log("You have made it in " + (path.length - 1) + " moves. Here is your path:"); //removes the starting position and displays
             for (let i = 0; i < path.length; i++) { 
                 console.log(path[i]);
             }
             return path;
         }
 
-        //loop through directions
-
-        for(let i = 0; i < directions.length; i++) {
-            let newX = currentPosition[0] + directions[i][0];
+        //loop through all possible directions
+        for(let i = 0; i < directions.length; i++){
+            let newX = currentPosition[0] + directions[i][0]; //Represents the new positions after the knight is moved;
             let newY = currentPosition[1] + directions[i][1];
 
-            if(isValidPosition(newX, newY) && !visitedPosition[newX, newY]){
-                
+            if(isValidPosition(newX, newY) && !visitedPosition[newX + "," + newY]){ //check if poisiton is not viisted and within bounds of board
+                visitedPosition[newX + "," + newY] = true; //Mark position is visited
+                queue.push([[newX, newY], path.concat([[newX, newY]])]); //ad the new position and updated path to the queue
             }
         }
 
