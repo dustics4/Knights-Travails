@@ -14,7 +14,8 @@ function knightMoves(start, target){
     console.log(isValidPosition(9,1)); 
     
     let queue = [[start],[start]];
-    //variable path
+    let visitedPosition = {};
+    visitedPosition[start] = true;
 
     console.log(queue);
 
