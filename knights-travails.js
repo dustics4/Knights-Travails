@@ -34,6 +34,17 @@ function knightMoves(start, target){
             return path;
         }
 
+        //loop through directions
+
+        for(let i = 0; i < directions.length; i++) {
+            let newX = currentPosition[0] + directions[i][0];
+            let newY = currentPosition[1] + directions[i][1];
+
+            if(isValidPosition(newX, newY) && !visitedPosition[newX, newY]){
+                
+            }
+        }
+
     }
 }
 
